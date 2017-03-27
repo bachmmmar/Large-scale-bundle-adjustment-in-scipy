@@ -127,10 +127,6 @@ t1 = time.time()
 
 print("Optimization took {0:.0f} seconds".format(t1 - t0))
 
-plt.subplot(212)
-plt.plot(res.fun)
-plt.show(block=False)
-
 
 print('Before:')
 print('cam0: {}'.format(prettylist(x0[0:9])))
@@ -139,3 +135,8 @@ print('cam1: {}'.format(prettylist(x0[9:18])))
 print('After:')
 print('cam0: {}'.format(prettylist(res.x[0:9])))
 print('cam1: {}'.format(prettylist(res.x[9:18])))
+
+
+plt.subplot(212)
+plt.plot(res.fun)
+plt.show()
