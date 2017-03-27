@@ -93,6 +93,8 @@ def bundle_adjustment_sparsity(n_cameras, n_points, camera_indices, point_indice
 
     return A
 
+def prettylist(l):
+    return '[%s]' % ', '.join("%4.1e" % f for f in l)
 
 camera_params, points_3d, camera_indices, point_indices, points_2d = read_bal_data(FILE_NAME)
 
@@ -127,4 +129,13 @@ print("Optimization took {0:.0f} seconds".format(t1 - t0))
 
 plt.subplot(212)
 plt.plot(res.fun)
-plt.show()
+plt.show(block=False)
+
+
+print('Before:')
+print('cam0: {}'.format(prettylist(x0[0:9])))
+print('cam1: {}'.format(prettylist(x0[9:18])))
+
+print('After:')
+print('cam0: {}'.format(prettylist(res.x[0:9])))
+print('cam1: {}'.format(prettylist(res.x[9:18])))
