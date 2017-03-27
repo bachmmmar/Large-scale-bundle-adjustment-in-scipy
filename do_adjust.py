@@ -5,7 +5,8 @@ import numpy as np
 from scipy.sparse import lil_matrix
 import matplotlib.pyplot as plt
 
-FILE_NAME = "problem-49-7776-pre.txt"
+#FILE_NAME = "problem-49-7776-pre.txt"
+FILE_NAME = "prob.txt"
 
 def read_bal_data(file_name):
     with open(file_name, "rt") as file:
